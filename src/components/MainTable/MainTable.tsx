@@ -1,6 +1,6 @@
 'use client'; //основной компонент, где происходит вся логика с таблицей
 
-import { Card, Loader, Pagination, Table, TextInput, withTableActions, withTableSorting } from '@gravity-ui/uikit';
+import { Card, Label, Loader, Pagination, Table, TextInput, withTableActions, withTableSorting } from '@gravity-ui/uikit';
 import * as Api from '../RESTapi';
 import React, { useState } from 'react';
 import { AdminModal } from '../AdminModal';
@@ -118,6 +118,7 @@ export const MainTable = ({Update, isAdmin, onChange}) => {
                             ]
                         }
                     }}/>
+                <Label theme='info'>Всего достопримечательностей: {totalPages}</Label>
                 <Pagination page={currentPage} total={totalPages} pageSize={3} onUpdate={handlePageChange}/>
             </main>
         </Card>  
